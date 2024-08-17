@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AssetClass2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e009eeee0df8265ae41730d335b75ee33ca7e2bf")]
 [assembly: System.Reflection.AssemblyProductAttribute("AssetClass2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AssetClass2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AssetClass2
 {
-    public class AssetClass
+    public class AssetClass  //class that is used to provide a framework for the needed information for each investment index available for selection
     {
         public int Years { get; set; }
         public decimal Highest { get; set; }

@@ -5,24 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AssetClass2"
         mc:Ignorable="d"
-        Title="Asset Class Analyzer" Height="450" Width="800">
+        Title="Asset Class Analyzer" 
+        Height="450" Width="800"
+        Background="Navy"
+        WindowStyle="None">
+
     <Grid>
+        <!-- Aesthetics: Title Bar -->
+        <Border Background="Gray" Height="30" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+            <Grid>
+                <TextBlock Text="Asset Class Analyzer" Foreground="White" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                <!-- Minimize Button -->
+                <Button Content="—" HorizontalAlignment="Right" VerticalAlignment="Center" Width="30" Height="20" Margin="0,0,60,0" Click="MinimizeWindow"/>
+                <!-- Close Button -->
+                <Button Content="X" HorizontalAlignment="Right" VerticalAlignment="Center" Width="30" Height="20" Margin="0,0,30,0" Click="CloseWindow"/>
+            </Grid>
+        </Border>
+
+        <!-- Aesthetics: Background Rectangles -->
+        <Rectangle Fill="LightBlue" HorizontalAlignment="Center" Height="74" Margin="0,232,0,0" VerticalAlignment="Top" Width="670"/>
+        <Rectangle Fill="Moccasin" HorizontalAlignment="Left" Height="105" Margin="62,319,0,0" VerticalAlignment="Top" Width="175"/>
+        <Rectangle Fill="Moccasin" HorizontalAlignment="Left" Height="105" Margin="561,319,0,0" VerticalAlignment="Top" Width="176"/>
+        <Rectangle Fill="Moccasin" HorizontalAlignment="Center" Height="105" Margin="0,319,0,0" VerticalAlignment="Top" Width="175"/>
+        <Rectangle Fill="Moccasin" HorizontalAlignment="Center" Height="55" Margin="0,144,0,0" VerticalAlignment="Top" Width="670"/>
+        <Rectangle Fill="LightBlue" HorizontalAlignment="Center" Height="90" Margin="0,40,0,0" VerticalAlignment="Top" Width="770"/>
+
         <!-- Input -->
-        <ComboBox Name="IndexDropDown" HorizontalAlignment="Left" Height="25" Margin="55,114,0,0" VerticalAlignment="Top" Width="165"/>
-        <ComboBox Name="YearDropDown" HorizontalAlignment="Left" Height="25" Margin="330,114,0,0" VerticalAlignment="Top" Width="115"/>
+        <ComboBox Name="IndexDropDown" HorizontalAlignment="Left" Height="25" Margin="180,158,0,0" VerticalAlignment="Top" Width="165"/>
+        <ComboBox Name="YearDropDown" HorizontalAlignment="Left" Height="25" Margin="580,160,0,0" VerticalAlignment="Top" Width="115"/>
+
         <!-- Output -->
-        <TextBox Name="Lowest1000" HorizontalAlignment="Left" Height="35" Margin="65,264,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="155"/>
-        <TextBox Name="Mean1000" HorizontalAlignment="Left" Height="35" Margin="330,264,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="155"/>
-        <TextBox Name="Highest1000" HorizontalAlignment="Left" Height="35" Margin="570,264,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="155"/>
+        <TextBox Name="Lowest1000" HorizontalAlignment="Left" Height="34" Margin="80,382,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140"/>
+        <TextBox Name="Mean1000" HorizontalAlignment="Center" Height="35" Margin="0,381,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140"/>
+        <TextBox Name="Highest1000" Height="34" Margin="580,382,80,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+
         <!-- Statements -->
-        <TextBlock Name="Overall1000Stmt" HorizontalAlignment="Left" Height="30" Margin="55,174,0,0" TextWrapping="Wrap" Text="This is what a $1,000 investment would be after the number of years you chose given the:" VerticalAlignment="Top" Width="700"/>
-        <TextBlock Name="Lowest1000Stmt" HorizontalAlignment="Left" Height="25" Margin="65,234,0,0" TextWrapping="Wrap" Text="Lowest Average Rolling Return" VerticalAlignment="Top" Width="170"/>
-        <TextBlock Name="Mean1000Stmt" HorizontalAlignment="Left" Margin="330,242,0,0" TextWrapping="Wrap" Text="Mean Average Rolling Return" VerticalAlignment="Top" Height="20" Width="172"/>
-        <TextBlock Name="Highest1000Stmt" HorizontalAlignment="Left" Height="25" Margin="570,234,0,0" TextWrapping="Wrap" Text="Highest Average Rolling Return" VerticalAlignment="Top" Width="175"/>
-        <TextBlock Name="ChooseIndexStmt" HorizontalAlignment="Left" Height="30" Margin="60,79,0,0" TextWrapping="Wrap" Text="Choose an Index" VerticalAlignment="Top" Width="160"/>
-        <TextBlock Name="HowManyYearStmt" HorizontalAlignment="Center" Height="15" Margin="0,79,0,0" TextWrapping="Wrap" Text="How Many Years" VerticalAlignment="Top" Width="140"/>
+        <TextBlock Name="Overall1000Stmt" FontSize="16" HorizontalAlignment="Center" Height="44" Margin="0,247,0,0" TextWrapping="Wrap" Text="With an initial investment of $1000 and using historical return data, this is the range of values for your investment after the number of years you selected:" VerticalAlignment="Top" Width="620"/>
+        <TextBlock Name="Lowest1000Stmt" FontSize="14" HorizontalAlignment="Left" Height="35" Margin="80,330,0,0" TextWrapping="Wrap" Text="Lowest Average Rolling Return:" VerticalAlignment="Top" Width="176"/>
+        <TextBlock Name="Mean1000Stmt" FontSize="14" HorizontalAlignment="Left" Margin="330,330,0,0" TextWrapping="Wrap" Text="Mean Average Rolling Return:" VerticalAlignment="Top" Height="35" Width="175"/>
+        <TextBlock Name="Highest1000Stmt" FontSize="14" HorizontalAlignment="Left" Height="35" Margin="580,330,0,0" TextWrapping="Wrap" Text="Highest Average Rolling Return:" VerticalAlignment="Top" Width="175"/>
+        <TextBlock Name="ChooseIndexStmt" FontSize="14" HorizontalAlignment="Left" Height="19" Margin="80,164,0,0" TextWrapping="Wrap" Text="Which index?" VerticalAlignment="Top" Width="85"/>
+        <TextBlock Name="HowManyYearStmt" FontSize="14" HorizontalAlignment="Left" Height="15" Margin="454,163,0,0" TextWrapping="Wrap" Text="How Many Years?" VerticalAlignment="Top" Width="115"/>
+        <TextBlock Name="ExplanationStmt" FontSize="16" HorizontalAlignment="Center" Height="98" Margin="0,40,0,0" TextWrapping="Wrap" Text="Below you will be able to choose an index for investing and a timeframe for how long you would likely be keeping your money invested. This program will show you the mean, highest, and lowest historical average rolling returns applicable to the index you have selected for your chosen number of years. The hope is that you will be better prepared for the ups and downs that come with investing." VerticalAlignment="Top" Width="760"/>
 
-
-
+        <!-- Aesthetics: Borders -->
+        <Border BorderBrush="Wheat" BorderThickness="2" HorizontalAlignment="Center" Height="74" Margin="0,232,0,0" VerticalAlignment="Top" Width="670"/>
+        <Border BorderBrush="Firebrick" BorderThickness="2" HorizontalAlignment="Left" Height="105" Margin="62,319,0,0" VerticalAlignment="Top" Width="175"/>
+        <Border BorderBrush="Firebrick" BorderThickness="2" HorizontalAlignment="Left" Height="105" Margin="561,319,0,0" VerticalAlignment="Top" Width="176"/>
+        <Border BorderBrush="Firebrick" BorderThickness="2" HorizontalAlignment="Center" Height="105" Margin="0,319,0,0" VerticalAlignment="Top" Width="175"/>
+        <Border BorderBrush="Firebrick" BorderThickness="2" HorizontalAlignment="Center" Height="55" Margin="0,144,0,0" VerticalAlignment="Top" Width="670"/>
+        <Border BorderBrush="Wheat" BorderThickness="2" HorizontalAlignment="Center" Height="90" Margin="0,40,0,0" VerticalAlignment="Top" Width="770"/>
     </Grid>
 </Window>
